@@ -1,7 +1,7 @@
-let nome = "Wesley;";
+let nome = "Wesley";
 let num = 21;
 let verdade = true;
 
-console.log(nome);
-console.log(num);
-console.log(verdade);
+console.log(typeof (nome));
+console.log(typeof (num));
+console.log(typeof (verdade));
