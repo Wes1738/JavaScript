@@ -1,34 +1,66 @@
-class Carro {
-
-    constructor(marca, cor, gasolinaRestante, consumo){
-        this.marca = marca;
-        this.cor = cor;
-        this.gasolinaRestante = gasolinaRestante;
-        this.consumo = consumo;
+class ContaBancaria {
+    
+    constructor(saldoPoupanca, saldoCorrente, jurosPoupanca) {
+        this.saldoPoupanca = saldoPoupanca;
+        this.saldoCorrente = saldoCorrente;
+        this.jurosPoupanca = jurosPoupanca;
     }
 
-   dirigir(km) {
-    
-    let litrosConsumidos = km/this.consumo;
+    depositar(valor) {
+        this.saldoCorrente += valor;
+    }
 
-    this.gasolinaRestante -= litrosConsumidos;
+    sacar(valor) {
+        this.saldoCorrente -= valor;
+    }
 
-   }
+    transferenciaPoupanca(valor) {
+        this.saldoCorrente -= valor;
+        this.saldoPoupanca += valor;
+    }
 
-   abastecer(litros) {
-       this.gasolinaRestante += litros;
-   }
+    transferenciaCorrente(valor) {
+        this.saldoPoupanca -= valor;
+        this.saldoCorrente += valor; 
+    }
+
+    jurosDeAniversario() {
+        let juros = (this.saldoPoupanca * this.jurosPoupanca) / 100;
+        this.saldoPoupanca += juros;
+    }
+}
+
+class ContaEspecial extends ContaBancaria {
+
+    constructor(saldoPoupanca, saldoCorrente, jurosPoupanca) {
+        super(saldoPoupanca, saldoCorrente, jurosPoupanca * 2);
+    }
 
 }
 
-let carro = new Carro("Chevrolet", "Branca", 100, 14);
+let conta = new ContaBancaria(1000, 500, 1);
 
-console.log(carro);
+conta.depositar(2000);
+console.log(conta);
 
-carro.dirigir(100);
+conta.sacar(1000);
+console.log(conta);
 
-console.log(carro);
+conta.transferenciaPoupanca(1000);
+console.log(conta);
 
-carro.abastecer(5);
+conta.jurosDeAniversario();
+console.log(conta);
 
-console.log(carro);
+let conta2 = new ContaEspecial(3000, 5500, 2);
+console.log(conta2);
+
+conta2.depositar(6500);
+console.log(conta2);
+
+conta2.sacar(100);
+console.log(conta2);
+
+conta2.jurosDeAniversario();
+console.log(conta2);
+
