@@ -61,3 +61,36 @@ function exibirNumerosPrimos(limite) {
 }
 
 exibirNumerosPrimos(10);
+
+// Criar um Objeto endereço
+
+let endereco = {
+    rua: 'AV Guanabara',
+    cidade: 'Alto Horizonte',
+    CEP: '74540-190',
+}
+
+function exibirendereco (endereco) {
+    for (const chave in endereco) {
+        
+        console.log(chave, endereco[chave]);
+    }
+}
+
+exibirendereco(endereco);
+
+// Criar um mini-blog
+
+let postagem = {
+    titulo: 'Lorem Ipsum',
+    mensagem: 'Lorem Ipsum is a Dolor Pregnate',
+    autor: 'Veneci Iandini',
+    visualizacoes: '3456',
+    comentarios: [
+        { autor: 'dbc', mensagem: 'fhfsbbegjdbs'},
+        { autor: 'PLM', mensagem: 'ikjhfbfbbfgfgfdda'}
+    ],
+    estaAoVivo: true
+}
+
+console.log(postagem);
