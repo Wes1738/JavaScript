@@ -94,3 +94,31 @@ let postagem = {
 }
 
 console.log(postagem);
+
+// Adicionar Elementos no Array
+const numeros = [1, 2, 3, 4, 5, 6, 7];
+numeros.push(8); //Insere no Final
+console.log(numeros);
+numeros.splice(3, 0, 17); //Insere no Meio
+console.log(numeros);
+numeros.unshift(38); //Insere no Ínicio
+console.log(numeros);
+
+
+// Remover Elementos no Array
+numeros.pop(); // Remove o último elemento
+console.log(numeros);
+numeros.shift(); // Remove o Primeiro elemento
+console.log(numeros);
+numeros.splice(3, 1); //Remove do meio do Array
+console.log(numeros);
+
+// Esvaziar um Array
+const letras = ['a', 'c', 'd', 'm', 'w','h'];
+console.log(letras);
+// letras.length = 0;
+// console.log(letras);
+// OU........
+letras.splice(0, letras.length);
+console.log(letras);
+
