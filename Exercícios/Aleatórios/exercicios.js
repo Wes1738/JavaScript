@@ -122,3 +122,18 @@ console.log(letras);
 letras.splice(0, letras.length);
 console.log(letras);
 
+// Combinando e Cortando Arrays
+const primeiro = [1, 2, 3, 4];
+const segundo = [4, 5, 6, 7];
+
+const combinado = primeiro.concat(segundo);
+console.log(combinado);
+// Dividindo o array
+const cortado = combinado.slice(1, 3);
+console.log(cortado);
+
+// Usando o método Join
+const frase = "Olá seja bem vindo ao meu GitHub";
+const fraseSlug = frase.split(' ');
+console.log(fraseSlug);
+console.log(fraseSlug.join('-'));
